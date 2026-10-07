@@ -18,16 +18,20 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
   color: var(--ink);
-  background:
-    radial-gradient(circle at top left, #e7f4ef 0, transparent 36%),
-    radial-gradient(circle at top right, #f3efe6 0, transparent 32%),
-    var(--bg);
+  background-color: #cfe4ef;
+  background-image: url("ghibli-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   line-height: 1.7;
 }
 
@@ -43,9 +47,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(246, 243, 238, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .header-inner,
@@ -107,8 +111,9 @@ main {
 .hero,
 .card,
 .panel {
-  background: var(--card);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -116,8 +121,7 @@ main {
 .hero {
   padding: 40px 32px;
   background:
-    linear-gradient(135deg, rgba(216, 235, 228, 0.7), rgba(255, 255, 255, 0.95)),
-    var(--card);
+    linear-gradient(135deg, rgba(216, 235, 228, 0.55), rgba(255, 255, 255, 0.88));
 }
 
 .eyebrow {
@@ -170,7 +174,7 @@ h3 {
   margin: 24px 0 0;
   padding: 20px 22px;
   border-left: 4px solid var(--accent);
-  background: var(--bg-soft);
+  background: rgba(238, 246, 243, 0.72);
   border-radius: 0 16px 16px 0;
 }
 
@@ -214,13 +218,19 @@ h3 {
 }
 
 .site-footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(10px);
   padding: 22px 0 32px;
   color: var(--muted);
   font-size: 0.92rem;
 }
 
 @media (max-width: 640px) {
+  body {
+    background-attachment: scroll;
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: stretch;
